@@ -10,7 +10,7 @@
 
 - yarn
 - react + vite
-- redux tookit
+- redux toolkit
 - react router dom
 - json server
 - axios
