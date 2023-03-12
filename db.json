@@ -1,38 +1,38 @@
 {
   "classments": [
     {
-      "name": "Persipura",
-      "city": "Jayapura",
-      "ma": 0,
-      "me": 0,
+      "name": "Persib",
+      "city": "Surabaya",
+      "ma": 2,
+      "me": 2,
       "s": 0,
       "k": 0,
-      "gm": 0,
+      "gm": 4,
       "gk": 0,
-      "point": 0,
+      "point": 6,
       "id": 1
     },
     {
       "name": "Arema",
       "city": "Malang",
-      "ma": 0,
-      "me": 0,
+      "ma": 2,
+      "me": 1,
       "s": 0,
-      "k": 0,
-      "gm": 0,
-      "gk": 0,
-      "point": 0,
+      "k": 1,
+      "gm": 2,
+      "gk": 2,
+      "point": 3,
       "id": 2
     },
     {
       "name": "Persija",
       "city": "Jakarta",
-      "ma": 0,
+      "ma": 2,
       "me": 0,
       "s": 0,
-      "k": 0,
+      "k": 2,
       "gm": 0,
-      "gk": 0,
+      "gk": 4,
       "point": 0,
       "id": 3
     }

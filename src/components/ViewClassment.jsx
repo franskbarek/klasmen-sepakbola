@@ -12,7 +12,7 @@ export default function ViewClassment() {
 
   return (
     <div className="bg-blue-50 py-6 px-4">
-      <h2 className="text-2xl font-semibold mb-4">Info Klasemen</h2>
+      <h2 className="text-2xl font-semibold mb-4">Detail Klasemen</h2>
       <div className="bg-white shadow-md overflow-hidden rounded-md">
         <table className="w-full">
           <thead>
@@ -29,19 +29,29 @@ export default function ViewClassment() {
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
-            {classments.map((club, index) => (
-              <tr key={index} className="hover:bg-blue-50">
-                <td className="py-2 px-4">{index + 1}</td>
-                <td className="py-2 px-4">{club.name}</td>
-                <td className="py-2 px-4">{club.ma}</td>
-                <td className="py-2 px-4">{club.me}</td>
-                <td className="py-2 px-4">{club.s}</td>
-                <td className="py-2 px-4">{club.k}</td>
-                <td className="py-2 px-4">{club.gm}</td>
-                <td className="py-2 px-4">{club.gk}</td>
-                <td className="py-2 px-4">{club.point}</td>
-              </tr>
-            ))}
+            {classments
+              .sort((a, b) => {
+                // sorting berdasarkan poin, jumlah bermain, jumlah gol dan jumlah kebobolan
+                return (
+                  b.point - a.point || // poin lebih besar
+                  a.ma - b.ma || // jumlah main lebih sedikit
+                  b.gm - a.gm || // jumlah gol lebih banyak
+                  a.gk - b.gk
+                ); // jumlah kebobolan lebih sedikit
+              })
+              .map((club, index) => (
+                <tr key={index} className="hover:bg-blue-50">
+                  <td className="py-2 px-4">{index + 1}.</td>
+                  <td className="py-2 px-4">{club.name}</td>
+                  <td className="py-2 px-4">{club.ma}</td>
+                  <td className="py-2 px-4">{club.me}</td>
+                  <td className="py-2 px-4">{club.s}</td>
+                  <td className="py-2 px-4">{club.k}</td>
+                  <td className="py-2 px-4">{club.gm}</td>
+                  <td className="py-2 px-4">{club.gk}</td>
+                  <td className="py-2 px-4">{club.point}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       </div>
