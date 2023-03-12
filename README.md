@@ -36,6 +36,6 @@ Jalankan aplikasi dengan perintah **`npm run dev`** atau **`yarn dev`** jika men
 
 Jalankan JSON server dengan perintah **`json-server --watch db.json --port 5000`**
 
-Aplikasi akan berjalan pada http://localhost:5000 dan siap digunakan
+Faux API akan berjalan pada http://localhost:5000 & User Interface Aplikasi akan berjalan pada http://localhost:5173 dan siap digunakan
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
