@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import productReducer from "../features/productSlice";
+import classmentReducer from "../features/classmentSlice";
 
 export const store = configureStore({
   reducer: {
-    product: productReducer,
+    classment: classmentReducer,
   },
 });
