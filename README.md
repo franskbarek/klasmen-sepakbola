@@ -24,7 +24,7 @@
 
 ## Cara menjalankan aplikasi
 
-Clone repositori ini lokal mesin anda dengan perintah git clone **`https://github.com/franskbarek/klasmen-sepakbola.git`**
+Clone aplikasi ke lokal mesin anda dengan perintah git clone **`https://github.com/franskbarek/klasmen-sepakbola.git`**
 
 Masuk ke dalam direktori aplikasi dengan perintah **`cd klasmen-sepakbola`**
 
