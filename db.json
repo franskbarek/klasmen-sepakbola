@@ -13,18 +13,6 @@
       "id": 1
     },
     {
-      "name": "Arema",
-      "city": "Malang",
-      "ma": 2,
-      "me": 1,
-      "s": 0,
-      "k": 1,
-      "gm": 2,
-      "gk": 2,
-      "point": 3,
-      "id": 2
-    },
-    {
       "name": "Persija",
       "city": "Jakarta",
       "ma": 2,
@@ -35,6 +23,18 @@
       "gk": 4,
       "point": 0,
       "id": 3
+    },
+    {
+      "name": "Arema",
+      "city": "Malang",
+      "ma": 2,
+      "me": 1,
+      "s": 0,
+      "k": 1,
+      "gm": 2,
+      "gk": 2,
+      "point": 3,
+      "id": 2
     }
   ]
 }
