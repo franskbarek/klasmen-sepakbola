@@ -2,9 +2,7 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/franskbarek/klasmen-sepakbola.svg)](https://github.com/franskbarek/klasmen-sepakbola/stars) [![GitHub Issues](https://img.shields.io/github/issues/franskbarek/klasmen-sepakbola.svg)](https://github.com/franskbarek/klasmen-sepakbola/issues)
 
-# Klasmen Sepakbola
-
----
+# Klasemen Sepakbola
 
 ## Teknologi yang digunakan
 
