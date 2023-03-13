@@ -34,27 +34,32 @@ export default function InputMultipleDataScore() {
 
   // Validasi data pertandingan tidak boleh sama
   const handleDuplicate = () => {
-    const isMatchExist = matchData.some((data) => (data.homeTeam === match.homeTeam && data.awayTeam === match.awayTeam) || (data.homeTeam === match.awayTeam && data.awayTeam === match.homeTeam));
-
+    const isMatchExist = match.homeTeam === match.awayTeam;
     if (isMatchExist) {
-      toast.error("Tim yang bertanding tidak boleh sama!");
+      toast.error("Tim yang bertanding tidak boleh sama atau dikosongkan!");
       return true;
     }
-
     setMatchData([...matchData, match]);
     setMatch(initialMatch);
     setMatchFormRows([...matchData, match, initialMatch]);
+    return false;
   };
 
-  // Validasi data jika nama klub tidak diisi
-  const handleAddMatch = () => {
+  const handleEmpty = () => {
+    // Validasi data jika nama klub tidak diisi
     const isEmpty = match.homeTeam === "" || match.awayTeam === "";
     if (isEmpty) {
       toast.error("Maaf nama klub wajib diisi!");
       return true;
     }
+  };
+
+  const handleAddMatch = () => {
     // Validasi data pertandingan tidak boleh sama
     if (handleDuplicate()) {
+      return true;
+    }
+    if (handleEmpty()) {
       return true;
     }
     toast.success("Data berhasil ditambahkan.");
@@ -82,14 +87,14 @@ export default function InputMultipleDataScore() {
   };
 
   const handleSaveMatch = async () => {
-    const isEmpty = match.homeTeam === "" || match.awayTeam === "";
-    if (isEmpty) {
-      toast.error("Maaf nama klub wajib diisi!");
-      return true;
-    }
     if (handleDuplicate()) {
       return true;
     }
+
+    if (handleEmpty()) {
+      return true;
+    }
+
     handleValidateMatch();
 
     for (let i = 0; i < matchData.length; i++) {
@@ -101,6 +106,7 @@ export default function InputMultipleDataScore() {
     setTimeout(() => {
       navigate("/");
     }, 2000);
+    return false;
   };
 
   return (
