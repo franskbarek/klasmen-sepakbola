@@ -20,10 +20,6 @@ export default function InputMultipleDataScore() {
   // data form keseluruhan termasuk yang belum di-add
   const [matchFormRows, setMatchFormRows] = useState([...matchData, initialMatch]);
 
-  useEffect(() => {
-    dispatch(getClassments());
-  }, [dispatch]);
-
   const handleInputChange = (event, rowNum) => {
     const { name, value } = event.target;
     setMatch({ ...match, [name]: value });
