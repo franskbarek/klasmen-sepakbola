@@ -35,30 +35,6 @@
       "gk": 2,
       "point": 3,
       "id": 2
-    },
-    {
-      "name": "Persipura",
-      "city": "Jayapura",
-      "ma": 5,
-      "me": 1,
-      "s": 3,
-      "k": 1,
-      "gm": 1,
-      "gk": 1,
-      "point": 6,
-      "id": 4
-    },
-    {
-      "name": "Persiwa",
-      "city": "Wamena",
-      "ma": 5,
-      "me": 1,
-      "s": 3,
-      "k": 1,
-      "gm": 1,
-      "gk": 1,
-      "point": 6,
-      "id": 5
     }
   ]
 }

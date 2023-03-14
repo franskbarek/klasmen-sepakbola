@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -41,8 +41,8 @@ export default function InputMultipleDataScore() {
     return false;
   };
 
+  // validasi data jika nama klub tidak diisi
   const handleEmpty = () => {
-    // Validasi data jika nama klub tidak diisi
     const isEmpty = match.homeTeam === "" || match.awayTeam === "";
     if (isEmpty) {
       toast.error("Maaf nama klub wajib diisi!");
@@ -50,8 +50,8 @@ export default function InputMultipleDataScore() {
     }
   };
 
-  const handleAddMatch = async () => {
-    // Validasi data pertandingan tidak boleh sama
+  // validasi data pertandingan tidak boleh sama
+  const handleAddMatch = () => {
     if (handleDuplicate()) {
       return true;
     }
@@ -65,7 +65,7 @@ export default function InputMultipleDataScore() {
   const handleSaveMatch = async () => {
     for (let i = 0; i < matchData.length; i++) {
       const currentMatch = matchData[i];
-      // Proses simpan ke database
+      // proses simpan ke database
       await dispatch(updateClassment({ ...currentMatch }));
     }
     toast.success("Data berhasil disimpan.");
