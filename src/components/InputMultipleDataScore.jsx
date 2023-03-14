@@ -28,7 +28,7 @@ export default function InputMultipleDataScore() {
     setMatchFormRows(rows);
   };
 
-  // Validasi data pertandingan tidak boleh sama
+  // validasi data pertandingan tidak boleh sama
   const handleDuplicate = () => {
     const isMatchExist = match.homeTeam === match.awayTeam;
     if (isMatchExist) {
@@ -50,28 +50,27 @@ export default function InputMultipleDataScore() {
     }
   };
 
-  // validasi data pertandingan tidak boleh sama
+  // tambah
   const handleAddMatch = () => {
     if (handleEmpty()) {
       return true;
     }
-
     if (handleDuplicate()) {
       return true;
     }
-
     toast.success("Data berhasil ditambahkan.");
     return false;
   };
 
+  // simpan
   const handleSaveMatch = async () => {
     for (let i = 0; i < matchData.length; i++) {
       const currentMatch = matchData[i];
-      // proses simpan ke database
       if (!currentMatch) {
         toast.error("Tambah tim ke list sebelum simpan!");
         return;
       }
+      // proses simpan ke db
       await dispatch(updateClassment({ ...currentMatch }));
       toast.success("Data berhasil disimpan.");
       setTimeout(() => {
