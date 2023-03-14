@@ -21,7 +21,7 @@ export default function Navbar() {
             <div className="ml-4">
               <div className="flex items-baseline space-x-4">
                 <Link to="/" className="text-gray-700 hover:text-blue-800 px-3 py-2 rounded-md text-medium">
-                  Klasmen
+                  Klasemen
                 </Link>
                 <Link to="/input-data-club" className="text-gray-700 hover:text-blue-800 px-3 py-2 rounded-md text-medium">
                   Input Data Klub
