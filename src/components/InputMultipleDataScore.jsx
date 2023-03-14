@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -74,6 +74,10 @@ export default function InputMultipleDataScore() {
     }, 2000);
     return false;
   };
+
+  useEffect(() => {
+    dispatch(getClassments());
+  }, [dispatch]);
 
   return (
     <div className="bg-blue-100 p-4">

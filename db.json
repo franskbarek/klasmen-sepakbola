@@ -35,6 +35,30 @@
       "gk": 2,
       "point": 3,
       "id": 2
+    },
+    {
+      "name": "persipura",
+      "city": "jayapura",
+      "ma": 1,
+      "me": 0,
+      "s": 1,
+      "k": 0,
+      "gm": 0,
+      "gk": 0,
+      "point": 1,
+      "id": 4
+    },
+    {
+      "name": "persiwa",
+      "city": "wamena",
+      "ma": 1,
+      "me": 0,
+      "s": 1,
+      "k": 0,
+      "gm": 0,
+      "gk": 0,
+      "point": 1,
+      "id": 5
     }
   ]
 }
