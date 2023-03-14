@@ -50,7 +50,7 @@ export default function InputMultipleDataScore() {
     }
   };
 
-  const handleAddMatch = () => {
+  const handleAddMatch = async () => {
     // Validasi data pertandingan tidak boleh sama
     if (handleDuplicate()) {
       return true;
@@ -62,37 +62,7 @@ export default function InputMultipleDataScore() {
     return false;
   };
 
-  // Jika menang + 3 poin, jika seri masing-masing +1 poin, jika kalah + 0 poin
-  const handleCalculatePoints = (homeScore, awayScore) => {
-    if (homeScore > awayScore) {
-      return { homePoints: 3, awayPoints: 0 };
-    } else if (homeScore < awayScore) {
-      return { homePoints: 0, awayPoints: 3 };
-    } else {
-      return { homePoints: 1, awayPoints: 1 };
-    }
-  };
-
-  const handleValidateMatch = () => {
-    // Validasi setiap pertandingan
-    matchData.map((data) => {
-      const { homeScore, awayScore } = data;
-      const { homePoints, awayPoints } = handleCalculatePoints(homeScore, awayScore);
-      return { ...data, homePoints, awayPoints };
-    });
-  };
-
   const handleSaveMatch = async () => {
-    if (handleDuplicate()) {
-      return true;
-    }
-
-    if (handleEmpty()) {
-      return true;
-    }
-
-    handleValidateMatch();
-
     for (let i = 0; i < matchData.length; i++) {
       const currentMatch = matchData[i];
       // Proses simpan ke database
