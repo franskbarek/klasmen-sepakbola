@@ -32,7 +32,7 @@ export default function InputMultipleDataScore() {
   const handleDuplicate = () => {
     const isMatchExist = match.homeTeam === match.awayTeam;
     if (isMatchExist) {
-      toast.error("Tim yang bertanding tidak boleh sama atau dikosongkan!");
+      toast.error("Tim yang bertanding tidak boleh sama!");
       return true;
     }
     setMatchData([...matchData, match]);
@@ -52,12 +52,14 @@ export default function InputMultipleDataScore() {
 
   // validasi data pertandingan tidak boleh sama
   const handleAddMatch = () => {
-    if (handleDuplicate()) {
-      return true;
-    }
     if (handleEmpty()) {
       return true;
     }
+
+    if (handleDuplicate()) {
+      return true;
+    }
+
     toast.success("Data berhasil ditambahkan.");
     return false;
   };
@@ -66,13 +68,17 @@ export default function InputMultipleDataScore() {
     for (let i = 0; i < matchData.length; i++) {
       const currentMatch = matchData[i];
       // proses simpan ke database
+      if (!currentMatch) {
+        toast.error("Tambah tim ke list sebelum simpan!");
+        return;
+      }
       await dispatch(updateClassment({ ...currentMatch }));
+      toast.success("Data berhasil disimpan.");
+      setTimeout(() => {
+        navigate("/");
+      }, 2000);
+      return;
     }
-    toast.success("Data berhasil disimpan.");
-    setTimeout(() => {
-      navigate("/");
-    }, 2000);
-    return false;
   };
 
   useEffect(() => {
