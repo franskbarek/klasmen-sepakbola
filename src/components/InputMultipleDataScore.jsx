@@ -7,11 +7,11 @@ import { classmentSelectors, getClassments, updateClassment } from "../features/
 export default function InputMultipleDataScore() {
   const initialMatch = { homeTeam: "", awayTeam: "", homeScore: 0, awayScore: 0 };
 
-  // data form yang sudah di-add
-  const [matchData, setMatchData] = useState([]);
-
-  // data form yang paling bawah yang belum di-add
+  // data form yang paling bawah yang belum di-simpan
   const [match, setMatch] = useState(initialMatch);
+
+  // data form yang sudah di-tambah
+  const [matchData, setMatchData] = useState([]);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -64,15 +64,19 @@ export default function InputMultipleDataScore() {
 
   // simpan
   const handleSaveMatch = async () => {
+    //wajib tambah tim dulu sebelum simpan
+    if (matchData.length === 0) {
+      toast.error("Wajib tambahkan tim ke list sebelum simpan!");
+      return;
+    }
+
     for (let i = 0; i < matchData.length; i++) {
       const currentMatch = matchData[i];
-      if (!currentMatch) {
-        toast.error("Tambah tim ke list sebelum simpan!");
-        return;
-      }
+
       // proses simpan ke db
       await dispatch(updateClassment({ ...currentMatch }));
       toast.success("Data berhasil disimpan.");
+
       setTimeout(() => {
         navigate("/");
       }, 2000);
